@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://dlwn76b7oehoj"]
+
+[ext_resource type="Script" uid="uid://xkrc6aqowb0k" path="res://node_2d.gd" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://bfw3b4g2bp0dt" path="res://icon.svg" id="1_wtcfe"]
+
+[node name="TitleScreen" type="Node2D" unique_id=1251269517]
+position = Vector2(0, -1)
+script = ExtResource("1_0e48y")
+
+[node name="Background" type="TextureRect" parent="." unique_id=2095817167]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_wtcfe")
+
+[node name="Title" type="RichTextLabel" parent="Background" unique_id=1696786690]
+clip_contents = false
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.363
+offset_left = 81.0
+offset_top = 33.0
+offset_right = 1050.0
+offset_bottom = 97.776
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/normal_font_size = 108
+text = "A Hundred and Ten Percent"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2016686343]
+offset_left = 446.0
+offset_top = 330.0
+offset_right = 705.0
+offset_bottom = 598.0
+
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=1164268732]
+layout_mode = 2
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 26
+text = "Start Game"
+
+[node name="Settings" type="Button" parent="VBoxContainer" unique_id=70635043]
+layout_mode = 2
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 26
+text = "Settings"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=1179137430]
+layout_mode = 2
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 26
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
