@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bretxvb4ql3vo"]
+
+[ext_resource type="Script" uid="uid://cj807r8h63r5p" path="res://controls.gd" id="1_gpdjo"]
+
+[node name="Botão de voltar" type="Control" unique_id=1912140254]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gpdjo")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2112733079]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BackButton" type="Button" parent="." unique_id=6875598]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0

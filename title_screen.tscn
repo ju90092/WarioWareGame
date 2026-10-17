@@ -1,54 +1,93 @@
 [gd_scene format=3 uid="uid://dsfe2r0g2jqtw"]
 
-[ext_resource type="Script" uid="uid://xkrc6aqowb0k" path="res://node_2d.gd" id="1_ak2if"]
-[ext_resource type="Texture2D" uid="uid://bfw3b4g2bp0dt" path="res://icon.svg" id="2_ig5kc"]
+[ext_resource type="Script" uid="uid://c1cfy2uias6ln" path="res://title_screen.gd" id="1_v6p8y"]
 
-[node name="TitleScreen" type="Node2D" unique_id=1251269517]
-position = Vector2(0, -1)
-script = ExtResource("1_ak2if")
+[node name="Title Screen" type="Control" unique_id=1708430555]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v6p8y")
 
-[node name="Background" type="TextureRect" parent="." unique_id=2095817167]
-offset_right = 1152.0
-offset_bottom = 648.0
-texture = ExtResource("2_ig5kc")
-
-[node name="Title" type="RichTextLabel" parent="Background" unique_id=1696786690]
-clip_contents = false
+[node name="Background" type="ColorRect" parent="." unique_id=951484245]
 layout_mode = 1
-anchors_preset = -1
-anchor_bottom = 0.363
-offset_left = 81.0
-offset_top = 33.0
-offset_right = 1050.0
-offset_bottom = 97.776
-theme_override_constants/outline_size = 40
-theme_override_font_sizes/normal_font_size = 108
-text = "A Hundred and Ten Percent"
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8156863, 0.32156864, 0.49803922, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2016686343]
-offset_left = 446.0
-offset_top = 330.0
-offset_right = 705.0
-offset_bottom = 598.0
+[node name="MadeBy" type="HBoxContainer" parent="." unique_id=934718806]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -72.25
+offset_top = -32.0
+offset_right = 72.25
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 0
+alignment = 1
 
-[node name="Start" type="Button" parent="VBoxContainer" unique_id=1164268732]
+[node name="Placeholder" type="Label" parent="MadeBy" unique_id=531814556]
 layout_mode = 2
-theme_override_constants/outline_size = 14
-theme_override_font_sizes/font_size = 26
-text = "Start Game"
+text = "Made by"
 
-[node name="Settings" type="Button" parent="VBoxContainer" unique_id=70635043]
+[node name="ju90092" type="Button" parent="MadeBy" unique_id=1711386935 groups=["button"]]
+modulate = Color(1, 0.8862745, 0.5764706, 1)
 layout_mode = 2
-theme_override_constants/outline_size = 14
-theme_override_font_sizes/font_size = 26
+text = "ju90092"
+flat = true
+
+[node name="MainContainer" type="VBoxContainer" parent="." unique_id=1985508852]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.5
+offset_top = -80.0
+offset_right = 54.5
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameName" type="Label" parent="MainContainer" unique_id=861158657]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "A Hundred And Ten Percent "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainContainer" unique_id=70875012]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainContainer/HBoxContainer" unique_id=1856931624]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Play" type="Button" parent="MainContainer/HBoxContainer/VBoxContainer" unique_id=750826166 groups=["button"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Play"
+flat = true
+
+[node name="Settings" type="Button" parent="MainContainer/HBoxContainer/VBoxContainer" unique_id=1413393008 groups=["button"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "Settings"
+flat = true
 
-[node name="Quit" type="Button" parent="VBoxContainer" unique_id=1179137430]
+[node name="Quit" type="Button" parent="MainContainer/HBoxContainer/VBoxContainer" unique_id=1294741707 groups=["button"]]
 layout_mode = 2
-theme_override_constants/outline_size = 14
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 20
 text = "Quit"
-
-[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+flat = true

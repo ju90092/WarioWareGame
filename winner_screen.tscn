@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c6wor6bhoys0d"]
+
+[node name="Winner screen" type="Node2D" unique_id=189620548]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1689560003]
+offset_right = 1152.0
+offset_bottom = 648.0
