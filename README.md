@@ -1,1 +1,14 @@
-I tried to make a game inspired by the story of Psique and Eros (myth), but it's just a "demo" right now and I plan to add the story and more minigames someday.
+I tried to make a game inspired by the story of Psyche and Eros (myth), but it's just a "demo" right now, and I plan to add the story and more minigames someday.
+
+To make minigames 1 and 2, I followed a Hack Club guide on how to make a WarioWare-style game. I don't know why, but the code in the guide didn't work most of the time, so I had to search for ways to make things 
+work. Most of the time, Godot would flag things that weren't declared or non-existent functions. YouTube wasn't that great either because most of the tutorials are from ages ago (the "recent" ones are, like, 2 
+years old), and GDScript (the language Godot uses) changes over time, so the code from every tutorial I watched didn't work anymore.
+Still, I really wanted to find a way to make things work, so I tested a lot. By looking around the internet and asking Gemini for help, I was able to eliminate all the errors (it was really stressful because every
+time one was fixed, three others would appear, and I wasn't ready to fight any of them) and finally focus on the story.
+The first minigame in the Hack Club tutorial was a platformer, and the second was a clicker minigame. I'm planning to adapt them to the story, so it'll probably be like: "Oh, the wool you need is right there. Pick
+it up before something bad happens!", but I'm not sure yet.
+I was inspired by this myth because, like any kid whose favorite subject was history for a while, I'm really interested in mythology and how people interpret life and common events in each culture. Greek/Roman
+myths just happened to be among the most talked-about during the time I was in middle school, so they really hold a special place in my heart (this and theories like "Ancient Egyptians used water channels and 
+advanced hydraulic systems both for transporting heavy blocks and for elevating monumental structures when building pyramids").
+
+Sadly, the story of Eros and Psyche isn't in the game yet, but I'll try to add it as soon as possible.
