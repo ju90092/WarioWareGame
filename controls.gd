@@ -1,14 +1,15 @@
 extends Button
 
-@export var scene_path: String
-func on_back_button_pressed() -> void:
-	var _change_scene: Error = get_tree().change_scene_to_file(scene_path)
-	
-	
-func on_mouse_exited() -> void:
-	modulate.a =1.0
-	
-	
-func on_mouse_entered() -> void:
+@export_file("*.tscn") var scene_path: String = "res://title_screen.tscn"
+
+func _pressed() -> void:
+	if scene_path != "":
+		get_tree().change_scene_to_file(scene_path)
+	else:
+		push_warning("Backbutton: Nenhuma cena configurada em 'scene_path' no Inspector!")
+
+func _mouse_enter() -> void:
 	modulate.a = 0.5
-	
+
+func _mouse_exit() -> void:
+	modulate.a = 1.0

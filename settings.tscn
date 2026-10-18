@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dlhxxrasbabt8"]
 
 [ext_resource type="Script" uid="uid://bnia8ckjqibtv" path="res://settings.gd" id="1_x2hje"]
+[ext_resource type="Script" uid="uid://cj807r8h63r5p" path="res://controls.gd" id="2_nkug2"]
 
 [node name="Settings" type="Control" unique_id=2142700252]
 layout_mode = 3
@@ -37,6 +38,35 @@ text = "Mute"
 layout_mode = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=456942074]
+
+[node name="Control" type="Control" parent="." unique_id=368159540]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1390578444]
+layout_mode = 0
+offset_left = 275.0
+offset_top = 177.0
+offset_right = 804.0
+offset_bottom = 217.0
+color = Color(1, 0.67058825, 0.4509804, 1)
+
+[node name="Button" type="Button" parent="Control" unique_id=1696176465]
+layout_mode = 0
+offset_left = 275.0
+offset_top = 176.0
+offset_right = 805.0
+offset_bottom = 218.0
+script = ExtResource("2_nkug2")
+
+[node name="Label" type="Label" parent="Control" unique_id=336256080]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 187.0
+offset_right = 547.0
+offset_bottom = 210.0
+text = "Back"
 
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/Mute" to="." method="_on_mute_toggled"]
