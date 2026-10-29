@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://ltabsmsdeljc"]
+
+[ext_resource type="Script" uid="uid://wh776abpytx1" path="res://meia_derrota.gd" id="1_i2qdv"]
+[ext_resource type="Texture2D" uid="uid://bqecer3awc8o8" path="res://Fundo preto.png" id="2_kfnx0"]
+[ext_resource type="Script" uid="uid://cj807r8h63r5p" path="res://controls.gd" id="3_35lkp"]
+
+[node name="Meia Derrota" type="Node2D" unique_id=1952482899]
+script = ExtResource("1_i2qdv")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=451661794]
+texture_filter = 1
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_kfnx0")
+
+[node name="Control" type="Control" parent="." unique_id=1374750604]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=155811769]
+layout_mode = 0
+offset_left = 275.0
+offset_top = 177.0
+offset_right = 804.0
+offset_bottom = 217.0
+color = Color(1, 0.67058825, 0.4509804, 1)
+
+[node name="Button" type="Button" parent="Control" unique_id=569794527]
+layout_mode = 0
+offset_left = 275.0
+offset_top = 176.0
+offset_right = 805.0
+offset_bottom = 218.0
+script = ExtResource("3_35lkp")
+
+[node name="Label" type="Label" parent="Control" unique_id=2061135312]
+layout_mode = 0
+offset_left = 463.0
+offset_top = 187.0
+offset_right = 641.0
+offset_bottom = 210.0
+text = "Back to the title screen"

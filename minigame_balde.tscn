@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://cd3k7kpqdvgan"]
+
+[ext_resource type="Script" uid="uid://mixcvnleq5a2" path="res://minigame_balde.gd" id="1_yqxri"]
+[ext_resource type="Texture2D" uid="uid://ilmqrtcbwyj0" path="res://Torre sem fundo.png" id="2_espii"]
+[ext_resource type="Texture2D" uid="uid://cnh5rwnvbk3kf" path="res://Balde.png" id="2_v4c21"]
+[ext_resource type="Texture2D" uid="uid://cxgdgrsxrb4s7" path="res://Fio.png" id="3_espii"]
+
+[node name="MinigameBalde" type="Node2D" unique_id=1479906457]
+script = ExtResource("1_yqxri")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=256860996]
+texture_filter = 1
+offset_left = -1927.0
+offset_top = -4290.0
+offset_right = 1160.0
+offset_bottom = 670.0
+texture = ExtResource("2_espii")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=7527777]
+
+[node name="BarraProgresso" type="ProgressBar" parent="CanvasLayer" unique_id=1995700802]
+offset_left = 1000.0
+offset_top = 4.0
+offset_right = 1146.0
+offset_bottom = 47.0
+theme_override_colors/font_color = Color(0.07450981, 0.9490196, 0.38431373, 1)
+theme_override_font_sizes/font_size = 27
+
+[node name="LabelTempo" type="Label" parent="CanvasLayer" unique_id=783806130]
+offset_left = 825.0
+offset_top = 8.0
+offset_right = 865.0
+offset_bottom = 47.0
+theme_override_colors/font_color = Color(1.3749781, 0.15774925, 0.14711843, 1)
+theme_override_font_sizes/font_size = 28
+text = "0.0"
+
+[node name="Balde" type="Sprite2D" parent="." unique_id=856705008]
+texture_filter = 1
+position = Vector2(583, 473)
+scale = Vector2(9.2578125, 8.1171875)
+texture = ExtResource("2_v4c21")
+
+[node name="Sprite2D" type="Sprite2D" parent="Balde" unique_id=2143128539]
+position = Vector2(-6.593764e-06, -55.474327)
+scale = Vector2(1, 2.4712524)
+texture = ExtResource("3_espii")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1908651584]
+offset_left = -386.0
+offset_top = 611.0
+offset_right = 1573.0
+offset_bottom = 833.0
+color = Color(0.380189, 0.380189, 0.38018897, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1726232349]
+offset_left = 8.0
+offset_top = 608.0
+offset_right = 384.0
+offset_bottom = 642.0
+theme_override_font_sizes/font_size = 24
+text = "Click until the bar reaches 100%."

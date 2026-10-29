@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d4ds30nq2t4qs"]
+
+[ext_resource type="PackedScene" uid="uid://24f6cv3f8kya" path="res://player.tscn" id="1_ipwg6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_etiyu"]
+size = Vector2(1152, 25)
+
+[node name="story2" type="Node2D" unique_id=562470323]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1912075008]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Player" parent="." unique_id=1241253510 instance=ExtResource("1_ipwg6")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=583854566]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=904355688]
+position = Vector2(576, 635.5)
+shape = SubResource("RectangleShape2D_etiyu")

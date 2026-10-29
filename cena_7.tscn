@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c67yrarquxrft"]
+
+[ext_resource type="PackedScene" uid="uid://24f6cv3f8kya" path="res://player.tscn" id="1_42t25"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4lig"]
+size = Vector2(1152, 73)
+
+[node name="cena 7 apagar essa pq ta dando erro" type="Node2D" unique_id=1749732234]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1418396037]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Player" parent="." unique_id=1241253510 instance=ExtResource("1_42t25")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=169361984]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=861248205]
+position = Vector2(576, 611.5)
+shape = SubResource("RectangleShape2D_h4lig")

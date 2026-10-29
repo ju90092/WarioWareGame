@@ -10,7 +10,7 @@ func _ready() -> void:
 func on_button_pressed(button: Button) -> void:
 	match button.name:
 		"Play":
-			var _game: bool = get_tree().change_scene_to_file("res://minigame_1.tscn")
+			var _game: bool = get_tree().change_scene_to_file("res://story.tscn")
 			
 		"Settings":
 			var _settings: bool = get_tree().change_scene_to_file("res://settings.tscn")

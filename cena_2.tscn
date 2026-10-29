@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dbdcum3jluldv"]
+
+[ext_resource type="Script" uid="uid://c7awjk3rs2sad" path="res://cena_2.gd" id="1_axjqb"]
+[ext_resource type="PackedScene" uid="uid://24f6cv3f8kya" path="res://player.tscn" id="1_dw5i4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_etiyu"]
+size = Vector2(275, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4lig"]
+size = Vector2(306, 53)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_drakv"]
+size = Vector2(291, 57)
+
+[node name="story1" type="Node2D" unique_id=550094476]
+script = ExtResource("1_axjqb")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1840283824]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Player" parent="." unique_id=1241253510 instance=ExtResource("1_dw5i4")]
+position = Vector2(396, 30)
+
+[node name="Mais nova" type="StaticBody2D" parent="." unique_id=1007256659]
+
+[node name="ColorRect" type="ColorRect" parent="Mais nova" unique_id=465244374]
+offset_left = 797.0
+offset_top = 452.0
+offset_right = 1072.0
+offset_bottom = 490.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mais nova" unique_id=1528282140]
+position = Vector2(934.5, 471)
+shape = SubResource("RectangleShape2D_etiyu")
+
+[node name="Do meio" type="StaticBody2D" parent="." unique_id=1998945621]
+
+[node name="ColorRect" type="ColorRect" parent="Do meio" unique_id=645668349]
+offset_left = 430.0
+offset_top = 330.0
+offset_right = 736.0
+offset_bottom = 383.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Do meio" unique_id=666333519]
+position = Vector2(583, 356.5)
+shape = SubResource("RectangleShape2D_h4lig")
+
+[node name="Mais velha" type="StaticBody2D" parent="." unique_id=592021495]
+
+[node name="ColorRect" type="ColorRect" parent="Mais velha" unique_id=480257366]
+offset_left = 103.0
+offset_top = 247.0
+offset_right = 394.0
+offset_bottom = 304.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mais velha" unique_id=1327236384]
+position = Vector2(248.5, 275.5)
+shape = SubResource("RectangleShape2D_drakv")

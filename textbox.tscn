@@ -41,7 +41,9 @@ layout_mode = 2
 
 [node name="Text!" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer" unique_id=26611589]
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 35
 text = "Text!"
+horizontal_alignment = 1
 autowrap_mode = 2

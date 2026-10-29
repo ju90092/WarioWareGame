@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://7sbp35u16gea"]
+
+[ext_resource type="Script" uid="uid://yeiyxvqtwyaj" path="res://story_2.gd" id="1_gjcu2"]
+[ext_resource type="Texture2D" uid="uid://bqecer3awc8o8" path="res://Fundo preto.png" id="2_crw2b"]
+[ext_resource type="Texture2D" uid="uid://bh3bkajtulte" path="res://Personagens/RESPIRA_Protagonista1 - Copia.png" id="3_lcxsv"]
+[ext_resource type="Texture2D" uid="uid://ilmqrtcbwyj0" path="res://Torre sem fundo.png" id="4_hdman"]
+[ext_resource type="Texture2D" uid="uid://cnh5rwnvbk3kf" path="res://Balde.png" id="5_hgaoi"]
+[ext_resource type="Texture2D" uid="uid://cxgdgrsxrb4s7" path="res://Fio.png" id="6_jiuuk"]
+
+[node name="story2" type="Node2D" unique_id=601232800]
+script = ExtResource("1_gjcu2")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=216287881]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_crw2b")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=504190093]
+texture_filter = 1
+position = Vector2(574, 266)
+scale = Vector2(16.38675, 15.095459)
+texture = ExtResource("3_lcxsv")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1957530891]
+texture_filter = 1
+offset_left = -1353.0
+offset_top = -764.0
+offset_right = 941.0
+offset_bottom = 599.0
+texture = ExtResource("4_hdman")
+
+[node name="Balde" type="Sprite2D" parent="." unique_id=217202338]
+texture_filter = 1
+position = Vector2(661, 302)
+scale = Vector2(9.2578125, 8.1171875)
+texture = ExtResource("5_hgaoi")
+
+[node name="Sprite2D" type="Sprite2D" parent="Balde" unique_id=607045251]
+position = Vector2(-6.593764e-06, -20.471474)
+scale = Vector2(1, 0.28357425)
+texture = ExtResource("6_jiuuk")

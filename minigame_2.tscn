@@ -121,6 +121,19 @@ script = ExtResource("5_u32kt")
 
 [node name="ThemedTimer" parent="." unique_id=1506084795 instance=ExtResource("6_v84ot")]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=571197631]
+
+[node name="LabelTempo" type="Label" parent="CanvasLayer" unique_id=851624110]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -23.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1.3749781, 0.15774925, 0.14711843, 1)
+theme_override_font_sizes/font_size = 28
+text = "0.0"
+
 [connection signal="pressed" from="Button_1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="Button_2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button_3" to="." method="_on_button_3_pressed"]

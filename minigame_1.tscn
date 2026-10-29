@@ -59,6 +59,15 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_etiyu"]
 radius = 45.17743
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjyna"]
+size = Vector2(177, 174)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bod8p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_07efk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5nwy"]
+
 [node name="minigame_1" type="Node2D" unique_id=1691522616]
 script = ExtResource("1_wh6qq")
 
@@ -266,3 +275,69 @@ position = Vector2(411, 239)
 shape = SubResource("CircleShape2D_etiyu")
 
 [node name="Area2D2" type="Area2D" parent="Garlic6" unique_id=62901006]
+
+[node name="Pretendentes1" type="Node2D" parent="." unique_id=1355469076]
+
+[node name="TextureRect" type="TextureRect" parent="Pretendentes1" unique_id=116400066]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pretendentes1" unique_id=945866023]
+
+[node name="Area2D" type="Area2D" parent="Pretendentes1" unique_id=805432516]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pretendentes1/Area2D" unique_id=601862485]
+position = Vector2(90, 85)
+shape = SubResource("RectangleShape2D_rjyna")
+
+[node name="Pretendentes2" type="Node2D" parent="." unique_id=1103198317]
+
+[node name="TextureRect" type="TextureRect" parent="Pretendentes2" unique_id=679903676]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pretendentes2" unique_id=2026138845]
+
+[node name="Area2D" type="Area2D" parent="Pretendentes2" unique_id=1248928668]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pretendentes2/Area2D" unique_id=280369233]
+shape = SubResource("RectangleShape2D_bod8p")
+
+[node name="Pretendentes3" type="Node2D" parent="." unique_id=183443645]
+
+[node name="TextureRect" type="TextureRect" parent="Pretendentes3" unique_id=1144723647]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pretendentes3" unique_id=1724258008]
+
+[node name="Area2D" type="Area2D" parent="Pretendentes3" unique_id=153924829]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pretendentes3/Area2D" unique_id=613444655]
+shape = SubResource("RectangleShape2D_07efk")
+
+[node name="Pretendentes4" type="Node2D" parent="." unique_id=1711970264]
+
+[node name="TextureRect" type="TextureRect" parent="Pretendentes4" unique_id=1397278640]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pretendentes4" unique_id=702922171]
+
+[node name="Area2D" type="Area2D" parent="Pretendentes4" unique_id=189330182]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pretendentes4/Area2D" unique_id=1406093666]
+shape = SubResource("RectangleShape2D_n5nwy")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=14487887]
+
+[node name="LabelTempo" type="Label" parent="CanvasLayer" unique_id=146564601]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 39.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1.3749781, 0.15774925, 0.14711843, 1)
+theme_override_font_sizes/font_size = 28
+text = "0.0"

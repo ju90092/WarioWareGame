@@ -1,35 +1,71 @@
 extends Node2D
 
+@export var tempo_limite: float = 10.0
+
 @onready var themed_timer: Node2D = $ThemedTimer
+@onready var label_tempo: Label = $CanvasLayer/LabelTempo # Ajuste o caminho se a sua label estiver em outro nó
 
 var buttons_pressed := 0
 var scene_changing := false
+var minigame_ativo: bool = true
+var tempo_restante: float = 0.0
 
 func _ready() -> void:
-	# Inicia o timer e aguarda ele terminar
-	await themed_timer.start_timer(10.0)
+	minigame_ativo = true
+	scene_changing = false
+	tempo_restante = tempo_limite
 	
-	# Se o timer acabou e o jogador ainda não clicou nos 10 botões, ele perde
-	if not scene_changing:
-		scene_changing = true
-		Global.lives -= 1
-		Global.minigames_done -= 1
-		get_tree().change_scene_to_file("res://title_screen.tscn")
-
+	# Inicia o temporizador visual/lógico
+	await themed_timer.start_timer(tempo_limite)
+	
+	# Se o timer acabou e a cena ainda não mudou por vitória, conta como derrota por tempo
+	if not scene_changing and minigame_ativo:
+		_derrota_por_tempo()
 
 func _process(delta: float) -> void:
-	if scene_changing:
+	if scene_changing or not minigame_ativo:
 		return
 
-	# Se clicou em todos os 10 botões a tempo, ganha e muda de cena antes do timer acabar
+	# Atualiza o tempo decrescente para exibir na Label
+	if tempo_restante > 0.0:
+		tempo_restante -= delta
+		if label_tempo:
+			label_tempo.text = "Tempo: " + str(snapped(tempo_restante, 0.1)) + "s"
+
+	# Condição de vitória (pressionou os 10 botões)
 	if buttons_pressed >= 10:
-		scene_changing = true
-		if Global.minigames_done > 3:
-			get_tree().change_scene_to_file("res://scenes/done_screen.tscn")
-		else:
-			get_tree().change_scene_to_file("res://title_screen.tscn")
+		_vitoria()
 
+func _vitoria() -> void:
+	if scene_changing or not minigame_ativo:
+		return
+		
+	scene_changing = true
+	minigame_ativo = false
+	print("[MINIGAME 2] Vitória!")
+	
+	Global.jogos_ganhos += 1
+	Global.minigames_done += 1
+	get_tree().change_scene_to_file("res://level_scene.tscn")
 
+func _derrota_por_tempo() -> void:
+	if scene_changing or not minigame_ativo:
+		return
+		
+	scene_changing = true
+	minigame_ativo = false
+	print("[MINIGAME 2] Derrota por tempo! -1 vida.")
+	
+	Global.lives -= 1
+	Global.jogos_perdidos += 1
+	Global.minigames_done += 1
+	
+	if Global.lives <= 0:
+		get_tree().change_scene_to_file("res://death_screen.tscn")
+	else:
+		get_tree().change_scene_to_file("res://level_scene.tscn")
+
+# Funções dos botões
 func _on_button_1_pressed() -> void:
 	if $Button_1.visible:
 		buttons_pressed += 1

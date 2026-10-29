@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://bqy6itc1ag4gu"]
+
+[ext_resource type="Texture2D" uid="uid://bhu14cdjxk5xy" path="res://Personagens/River Background.png" id="1_ex68u"]
+[ext_resource type="PackedScene" uid="uid://24f6cv3f8kya" path="res://player.tscn" id="2_6bi5g"]
+[ext_resource type="Script" uid="uid://cj807r8h63r5p" path="res://controls.gd" id="3_6bi5g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_etiyu"]
+size = Vector2(1152, 57)
+
+[node name="Death screen" type="Node2D" unique_id=1675671166]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1840252937]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_ex68u")
+
+[node name="Player" parent="." unique_id=1241253510 instance=ExtResource("2_6bi5g")]
+position = Vector2(-284, -191)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1705875601]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=261581169]
+position = Vector2(576, 618.5)
+shape = SubResource("RectangleShape2D_etiyu")
+
+[node name="TextEdit" type="TextEdit" parent="Area2D" unique_id=1278910578]
+offset_right = 1152.0
+offset_bottom = 648.0
+text = "You lost all your hearts, but this is not the end of your journey. At least, not yet. As a mortal, you've probably noticed how fragile your life is... But 
+what if you chose another path? With new possibilities? Strange adventures? The sagacity of young love? What if time happened to turn a blind eye 
+to the time you have lost, making it endless? Guess you won't be able to find out right now, my Butterfly, but maybe another time? May your future 
+be happy, and may those who love you be closer than ever. This is not a goodbye, just a \"Good. Bye, until then.\""
+
+[node name="Control" type="Control" parent="." unique_id=309672758]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1980447867]
+layout_mode = 0
+offset_left = 275.0
+offset_top = 177.0
+offset_right = 804.0
+offset_bottom = 217.0
+color = Color(1, 0.67058825, 0.4509804, 1)
+
+[node name="Button" type="Button" parent="Control" unique_id=952143672]
+layout_mode = 0
+offset_left = 275.0
+offset_top = 176.0
+offset_right = 805.0
+offset_bottom = 218.0
+script = ExtResource("3_6bi5g")
+
+[node name="Label" type="Label" parent="Control" unique_id=377247279]
+layout_mode = 0
+offset_left = 445.0
+offset_top = 185.0
+offset_right = 623.0
+offset_bottom = 208.0
+text = "Back to the title screen"

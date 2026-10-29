@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cnsgw77n0g4ak"]
+
+[ext_resource type="PackedScene" uid="uid://24f6cv3f8kya" path="res://player.tscn" id="1_1ul0b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_etiyu"]
+size = Vector2(1152, 66)
+
+[node name="cena 6" type="Node2D" unique_id=534279262]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=942371768]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Player" parent="." unique_id=1241253510 instance=ExtResource("1_1ul0b")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=938964678]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1340781100]
+position = Vector2(576, 615)
+shape = SubResource("RectangleShape2D_etiyu")

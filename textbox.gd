@@ -18,19 +18,30 @@ var tween: Tween
 var state: State
 var current_lines: Array[String] = []
 var current_line_index: int = 0
+var _can_advance: bool = true
 
 func _ready():
 	_hide()
 	state = State.READY
 
-func _process(_delta):
+func _unhandled_input(event: InputEvent) -> void:
+	if not textbox_container or not textbox_container.visible:
+		return
+		
+	var is_click = event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed
+	var is_key = event.is_action_pressed("ui_select") or event.is_action_pressed("ui_accept")
+	
+	if is_click or is_key:
+		if _can_advance:
+			_handle_advance()
+			get_viewport().set_input_as_handled()
+
+func _handle_advance():
 	match state:
 		State.READING:
-			if Input.is_action_just_pressed("ui_select"):
-				_finish()
+			_finish()
 		State.FINISHED:
-			if Input.is_action_just_pressed("ui_select"):
-				_advance_or_close()
+			_advance_or_close()
 
 func _hide():
 	label.text = ""
@@ -58,12 +69,20 @@ func _finish():
 	state = State.FINISHED
 
 func _display_dialogue(lines: String):
-	# Se já estivemos em FINISHED e formos para a próxima linha, resetamos para READY primeiro
+	# Bloqueia temporariamente o avanço para não consumir o mesmo clique
+	_can_advance = false
 	state = State.READY
 	label.text = lines
 	_show()
+	
 	tween.tween_property(label, "visible_ratio", 1.0, len(lines) * CHAR_RATE)
 	state = State.READING
+	
+	# Libera o avanço no próximo frame
+	call_deferred("_enable_advance")
+
+func _enable_advance():
+	_can_advance = true
 
 func start_dialogue_sequence(lines_array: Array[String]):
 	if lines_array.is_empty():

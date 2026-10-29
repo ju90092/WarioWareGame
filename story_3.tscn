@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bbp1bu5exis0s"]
+
+[ext_resource type="Script" uid="uid://ce41mmxlnpwkd" path="res://story_3.gd" id="1_a14po"]
+[ext_resource type="Texture2D" uid="uid://ilmqrtcbwyj0" path="res://Torre sem fundo.png" id="2_glpkt"]
+[ext_resource type="Texture2D" uid="uid://cnh5rwnvbk3kf" path="res://Balde.png" id="3_who5r"]
+[ext_resource type="Texture2D" uid="uid://cxgdgrsxrb4s7" path="res://Fio.png" id="4_bstes"]
+
+[node name="story3" type="Node2D" unique_id=1618694366]
+script = ExtResource("1_a14po")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=7353648]
+texture_filter = 1
+offset_left = -1927.0
+offset_top = -4290.0
+offset_right = 1160.0
+offset_bottom = 670.0
+texture = ExtResource("2_glpkt")
+
+[node name="Balde" type="Sprite2D" parent="." unique_id=1646473939]
+texture_filter = 1
+position = Vector2(592, 570.00006)
+rotation = 1.605978
+scale = Vector2(9.2578125, 8.1171875)
+texture = ExtResource("3_who5r")
+
+[node name="Sprite2D" type="Sprite2D" parent="Balde" unique_id=1216238989]
+position = Vector2(3.5988064, -55.000355)
+scale = Vector2(1, 2.4712524)
+texture = ExtResource("4_bstes")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1548512923]
+offset_left = -386.0
+offset_top = 611.0
+offset_right = 1573.0
+offset_bottom = 833.0
+color = Color(0.380189, 0.380189, 0.38018897, 1)
